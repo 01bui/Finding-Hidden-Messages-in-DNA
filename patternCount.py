@@ -13,12 +13,12 @@ def patternCount(Text, Pattern):
 
 def readData(filename):
     with open(filename, 'r') as f:
-        f.readline() # Skip input line
+        #f.readline() # Skip input line
         Text = f.readline()
         Pattern = f.readline()
         return Text.strip(), Pattern.strip()
 
 if __name__ == "__main__":
-    Text, Pattern = readData('PatternCount.txt')
+    Text, Pattern = readData('dataset_2_6.txt')
     resultCount = patternCount(Text, Pattern)
     print resultCount
