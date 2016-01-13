@@ -27,13 +27,14 @@ def patternCount(Text, Pattern):
 
 def readData(filename):
     with open(filename, 'r') as f:
-        f.readline() # Skip input line
+        #f.readline() # Skip input line
         Text = f.readline()
         k = f.readline()
         return Text.strip(), int(k.strip())
 
 if __name__ == "__main__":
-    Text, k = readData('frequent_words_data.txt')
+    #Text, k = readData('frequent_words_data.txt')
+    Text, k = readData('dataset_2_9.txt')
     #Text = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
     #k = 4
     result = frequentWords(Text, k)
