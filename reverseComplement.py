@@ -16,17 +16,16 @@ def reverseComplement(Text):
 
 def readData(filename):
     with open(filename, 'r') as f:
-        f.readline() # Skip input line
+        #f.readline() # Skip input line
         Input = f.readline()
-        f.readline()
-        Output = f.readline()
-        return Input.strip(), Output.strip()
+        #f.readline()
+        #Output = f.readline()
+        return Input.strip()
 
 if __name__ == "__main__":
-    Input, Output = readData('reverse_complement_data.txt')
-    #Text, k = readData('dataset_2_9.txt')
+    #Input, Output = readData('reverse_complement_data.txt')
+    Input = readData('dataset_3_2.txt')
     #Text = "AAAACCCGGT"
     result = reverseComplement(Input)
     print result
-    print Output
-    assert(result == Output)
+    #assert(result == Output)
