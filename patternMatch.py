@@ -6,19 +6,24 @@ def patternMatch(Text, Pattern):
     patternList = list(Pattern)
     for i in range(0,len(textList)):
         if textList[i:i+len(patternList)] == patternList:
-            pos.append(i)
-    return pos
+            pos.append(str(i))
+    return " ".join(pos)
 
 def readData(filename):
     with open(filename, 'r') as f:
-        #f.readline() # Skip input line
-        Text = f.readline()
+        f.readline() # Skip input line
         Pattern = f.readline()
-        return Text.strip(), Pattern.strip()
+        Text = f.readline()
+        f.readline() # Skip
+        Output = f.readline()
+        return Text.strip(), Pattern.strip(), Output.strip()
 
 if __name__ == "__main__":
     #Text, Pattern = readData('dataset_2_6.txt')
-    Pattern = "ATAT"
-    Text = "GATATATGCATATACTT"
+    Text, Pattern, Output = readData('pattern_matching_data.txt')
+    #Pattern = "ATAT"
+    #Text = "GATATATGCATATACTT"
     result = patternMatch(Text, Pattern)
-    print result
+    #print result
+    #print Output
+    assert(result == Output)
