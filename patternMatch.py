@@ -12,20 +12,21 @@ def patternMatch(Text, Pattern):
 def readData(filename):
     with open(filename, 'r') as f:
         #f.readline() # Skip input line
-        Pattern = f.readline()
+        #Pattern = f.readline()
         Text = f.readline()
         #f.readline() # Skip
         #Output = f.readline()
-        return Text.strip(), Pattern.strip()
+        return Text.strip()
 
 if __name__ == "__main__":
-    Text, Pattern = readData('dataset_3_5.txt')
-    print Text
-    print Pattern
+    Text = readData('Vibrio_cholerae.txt')
+    #Text, Pattern = readData('dataset_3_5.txt')
+    #print Text
+    #print Pattern
     #Text, Pattern, Output = readData('pattern_matching_data.txt')
     #Pattern = "ATAT"
     #Text = "GATATATGCATATACTT"
-    result = patternMatch(Text, Pattern)
+    result = patternMatch(Text, "CTTGATCAT")
     print result
     #print Output
     #assert(result == Output)
