@@ -30,6 +30,6 @@ def readData(filename):
 
 if __name__ == "__main__":
     #Text, Pattern = readData('dataset_2_6.txt')
-    Pattern = "AGT"
+    Pattern = "CTTCTCACGTACAACAAAATC"
     result = patternToNumber(Pattern)
     print result
