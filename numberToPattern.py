@@ -16,13 +16,17 @@ def numberToPattern(index,k):
         return numberToSymbol(index)
     prefixIndex = index/4
     r = index % 4
-    print index, 4, prefixIndex, r
     symbol = numberToSymbol(r)
     prefixPattern = numberToPattern(prefixIndex,k-1)
     return prefixPattern + symbol
 
+def readData(filename):
+    with open(filename, 'r') as f:
+        index = f.readline()
+        k = f.readline()
+        return int(index), int(k)
+
 if __name__ == "__main__":
-    index = 5353
-    k = 7
+    index, k = readData('dataset_3010_4.txt')
     result = numberToPattern(index,k)
     print result
