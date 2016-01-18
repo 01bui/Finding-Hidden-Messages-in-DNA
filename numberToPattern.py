@@ -22,7 +22,7 @@ def numberToPattern(index,k):
     return prefixPattern + symbol
 
 if __name__ == "__main__":
-    index = 45
-    k = 4
+    index = 5353
+    k = 7
     result = numberToPattern(index,k)
     print result
