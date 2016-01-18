@@ -24,12 +24,10 @@ def patternToNumber(Pattern):
 def readData(filename):
     with open(filename, 'r') as f:
         #f.readline() # Skip input line
-        Text = f.readline()
         Pattern = f.readline()
-        return Text.strip(), Pattern.strip()
+        return Pattern.strip()
 
 if __name__ == "__main__":
-    #Text, Pattern = readData('dataset_2_6.txt')
-    Pattern = "CTTCTCACGTACAACAAAATC"
+    Pattern = readData('dataset_3010_2.txt')
     result = patternToNumber(Pattern)
     print result
