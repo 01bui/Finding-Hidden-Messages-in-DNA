@@ -32,11 +32,15 @@ def readData(filename):
     with open(filename, 'r') as f:
         #f.readline() # Skip input line
         Genome = f.readline()
-        line = f.readline()
-        line = line.split(" ")
-        return Genome.strip(), int(line[0]), int(line[1]), int(line[2])
+        #line = f.readline()
+        #line = line.split(" ")
+        #return Genome.strip(), int(line[0]), int(line[1]), int(line[2])
+        return Genome.strip()
 
 if __name__ == "__main__":
-    Genome, k, L, t = readData('dataset_4_5.txt')
+    Genome = readData('E-coli.txt')
+    k = 9
+    L = 500
+    t = 3
     result = betterClumpFinding(Genome, k, t, L)
-    print result
+    print len(result)
