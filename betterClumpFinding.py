@@ -28,10 +28,15 @@ def betterClumpFinding(Genome, k, t, L):
             frequentPatterns.append(pattern)
     return frequentPatterns
 
+def readData(filename):
+    with open(filename, 'r') as f:
+        #f.readline() # Skip input line
+        Genome = f.readline()
+        line = f.readline()
+        line = line.split(" ")
+        return Genome.strip(), int(line[0]), int(line[1]), int(line[2])
+
 if __name__ == "__main__":
-    Genome = "CGGACTCGACAGATGTGAAGAACGACAATGTGAAGACTCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA"
-    k = 5
-    L = 50
-    t = 4
+    Genome, k, L, t = readData('dataset_4_5.txt')
     result = betterClumpFinding(Genome, k, t, L)
     print result
