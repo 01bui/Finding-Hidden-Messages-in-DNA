@@ -7,7 +7,7 @@ def betterClumpFinding(Genome, k, t, L):
     frequentPatterns = []
     clump = []
     for i in range(4**k - 1 + 1):
-        clump[i] = 0
+        clump.insert(i, 0)
     text = Genome[0:L]
     frequencyArray = computingFreqs(text,k)
     for i in range(4**k-1+1):
@@ -29,5 +29,9 @@ def betterClumpFinding(Genome, k, t, L):
     return frequentPatterns
 
 if __name__ == "__main__":
+    Genome = "CGGACTCGACAGATGTGAAGAACGACAATGTGAAGACTCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA"
+    k = 5
+    L = 50
+    t = 4
     result = betterClumpFinding(Genome, k, t, L)
     print result
